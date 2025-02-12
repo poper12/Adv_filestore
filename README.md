@@ -1,126 +1,123 @@
-# File Sharing Ultra Modified Version By Hunters
+# File Sharing Ultra V1
 
-![image](https://github.com/Sahil0976/Multi-ForceSub_3buttons/assets/97865856/f590a80a-f80c-40bb-b583-a6e114122f3d)
+![Image](https://github.com/user-attachments/assets/ede171ae-66bb-45f8-aded-ce2f0dd5782d)
 
-## A Telegram File sharing bot you can access files through specific links..
+## 🚀 A Telegram File Sharing Bot
+Easily access files through specific links!
 
-##
+---
 
-Made by - [@Anime_X_Hunters](https://t.me/Anime_X_Hunters).
+## ✨ Features
+- 🔹 Fully customizable
+- 🔹 Two Force Sub Channels
+- 🔹 Change ForceSub & Admins via commands
+- 🔹 Custom welcome & ForceSub messages
+- 🔹 Customizable images
+- 🔹 Multiple posts in one link
+- 🔹 Deployable on **Heroku** & **Koyeb**
 
+---
 
+## ⚙️ Setup
+- Add the bot to **Database Channel** with all permissions
+- Add the bot to **ForceSub Channel** as Admin with "Invite Users via Link" permission (if enabled)
 
-### Features
-- Fully customisable.
-- Two Force Sub Channels - [SAHIL](https://t.me/Its_Sahil_Ansari)
-- You Can Directly Change Forcesub Channels and Admins Through Commands 
-- Customisable welcome & Forcesub messages.
-- Customisable Pics
-- More than one Posts in One Link.
-- Can be deployed on heroku directly.
-- Can be deployed on Koyeb Either
+---
 
-### Setup
+## 🚀 Installation
+### 📌 Deploy on Heroku
+**Fork the repo & rename it before deploying!**
 
-- Add bot to Database Channel with all permission
-- Add bot to ForceSub channel as Admin with Invite Users via Link Permission if you enabled ForceSub 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-##
-### Installation
-#### Deploy on Heroku
-**BEFORE YOU DEPLOY ON HEROKU, YOU SHOULD FORK THE REPO AND CHANGE ITS NAME TO ANYTHING ELSE**<br>
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)</br>
-
-##
-## Installation
-#### Deploy on Render
-<b>BEFORE DEPLOY ON RENDER, FORK REPO EDIT CONFIG, CREATE NEW WEB-SERVICE ADD VARIABLES AND ADD MONITOR THATS IT</b>
+### 📌 Deploy on Render
+**Fork the repo, edit config, create new web service, add variables, and add monitor.**
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com)
 
-##
-#### Deploy in your VPS
-````bash
-git clone https://github.com/<github-username>/<reponame>
-cd <repo name>
-# Make sure to remove "<>" symbols
+---
+
+### 📌 Deploy in VPS
+```bash
+# Clone repo
+git clone https://github.com/<github-username>/<repo-name>
+cd <repo-name>
+
+# Install dependencies
 pip3 install -r requirements.txt
-# Add all values in config.py properly
+
+# Add values in config.py
 python3 main.py
-````
-##
-#### Deploy in your VPS if Repository was Private
-````bash
+```
+
+### 📌 Deploy in VPS (Private Repo)
+```bash
 git clone https://<your-github-private-token>:x-oauth-basic@github.com/<github-username>/<repo-name>
-cd <repo name>
-# Make sure to remove "<>" symbols
+cd <repo-name>
 pip3 install -r requirements.txt
-# Add all values in config.py properly
 python3 main.py
-````
-
-### Admin Commands
-
-```
-start - start the bot or get posts
-batch - create link for more than one posts
-genlink - create link for one post
-users - view bot statistics
-broadcast - broadcast any messages to bot users
-stats - checking your bot uptime
-add_admin - (Owner Only) To add Admins
-del_admin - (Owner Only) Delete Admins
-admins - (Owner Only) Show Admin List
-forcesub1 - (Owner Only) Change Forcesub Channel 1
-forcesub2 - (Owner Only) Change Forcesub Channel 2
 ```
 
-### Variables
+---
 
-* `API_HASH` Your API Hash from my.telegram.org
-* `APP_ID` Your API ID from my.telegram.org
-* `TG_BOT_TOKEN` Your bot token from @BotFather
-* `OWNER_ID` Must enter Your Telegram Id
-* `CHANNEL_ID` Your Channel ID eg:- -100xxxxxxxx
-* `DB_URL` Your mongo db url
-* `DB_NAME` Your mongo db session name
-* `ADMINS` Optional: A space separated list of user_ids of Admins, they can only create links
-* `START_MSG` Optional: start message of bot
-* `FORCE_SUB_MESSAGE`Optional:Force sub message of bot, use HTML and Fillings
-* `FORCE_CHANNEL` Optional: ForceSub Channel ID, leave 0 if you want disable force sub
-* `FORCE_CHANNEL2` Optional: ForceSub Channel ID, leave 0 if you want disable force sub
-* `PROTECT_CONTENT` Optional: True if you need to prevent files from forwarding
+## 🔥 Admin Commands
+```bash
+start - Start the bot or get posts
+batch - Create links for multiple posts
+nbatch - Advanced batch processing
+genlink - Create link for one post
+users - View bot statistics
+broadcast - Broadcast messages to users
+stats - Check bot uptime
+add_admin - Add admins
+del_admin - Remove admins
+admins - View admin list
+forcesub1 - Change ForceSub Channel 1
+forcesub2 - Change ForceSub Channel 2
+```
 
-### Extra Variables
+---
 
-* `CUSTOM_CAPTION` put your Custom caption text if you want Setup Custom Caption
-* `DISABLE_CHANNEL_BUTTON` Put True to Disable Channel Share Button, Default if False
-* `BOT_STATS_TEXT` put your custom text for stats command
-* `USER_REPLY_TEXT` put your text to show when user sends any message, use HTML
+## 🔑 Environment Variables
+* `API_HASH` - API Hash from [my.telegram.org](https://my.telegram.org)
+* `APP_ID` - API ID from [my.telegram.org](https://my.telegram.org)
+* `TG_BOT_TOKEN` - Bot token from [@BotFather](https://t.me/BotFather)
+* `OWNER_ID` - Your Telegram ID
+* `CHANNEL_ID` - Your Channel ID (e.g., `-100xxxxxxxx`)
+* `DB_URL` - MongoDB URL
+* `DB_NAME` - MongoDB session name
+* `ADMINS` - (Optional) Space-separated list of admin user IDs
+* `START_MSG` - (Optional) Custom start message
+* `FORCE_SUB_MESSAGE` - (Optional) Custom ForceSub message
+* `FORCE_CHANNEL` - (Optional) ForceSub Channel ID (set `0` to disable)
+* `FORCE_CHANNEL2` - (Optional) Second ForceSub Channel ID
+* `PROTECT_CONTENT` - (Optional) Set `True` to prevent file forwarding
 
+---
 
-### Fillings
-#### START_MESSAGE | FORCE_SUB_MESSAGE
+## 🎨 Extra Variables
+* `CUSTOM_CAPTION` - Custom caption for documents
+* `DISABLE_CHANNEL_BUTTON` - Set `True` to disable channel share button (default `False`)
+* `BOT_STATS_TEXT` - Custom text for `/stats` command
+* `USER_REPLY_TEXT` - Custom reply text for user messages
 
+---
+
+## 🛠️ Fillings
+### 🔹 START_MESSAGE | FORCE_SUB_MESSAGE
 * `{first}` - User first name
 * `{last}` - User last name
 * `{id}` - User ID
-* `{mention}` - Mention the user
+* `{mention}` - Mention user
 * `{username}` - Username
 
-#### CUSTOM_CAPTION
+### 🔹 CUSTOM_CAPTION
+* `{filename}` - File name
+* `{previouscaption}` - Original caption
 
-* `{filename}` - file name of the Document
-* `{previouscaption}` - Original Caption
+### 🔹 CUSTOM_STATS
+* `{uptime}` - Bot uptime
 
-#### CUSTOM_STATS
+---
 
-* `{uptime}` - Bot Uptime
-
-
-### Licence
-[![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-127x51.png)](http://www.gnu.org/licenses/gpl-3.0.en.html)
-##
-
-   **Star this Repo if you Liked it ⭐⭐⭐**
-
+⭐ **Star this Repo if you Liked it!** ⭐⭐⭐
