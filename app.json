@@ -1,0 +1,75 @@
+{
+  "name": "TG File Sharing Bot",
+  "description": "File sharing bot.. access files privately through specific links..!",
+  "logo": "https://ibb.co/rmT4D1R",
+  "keywords": [
+    "telegram",
+    "file",
+    "sharing"
+  ],
+  "repository": "https://github.com/Sahil0976",
+  "logo": "https://ibb.co/rmT4D1R",
+  "env": {
+    "TG_BOT_TOKEN": { 
+      "description": "Your Bot token, Get it from @Botfather",
+      "value": "0"
+    },
+    "OWNER_ID": {
+      "description": "An integer of consisting of your owner ID",
+      "value": "5090651635"
+    },
+    "APP_ID":{
+      "description": "your app id, take it from my.telegram.org",
+      "value": "0"
+    },
+    "DATABASE_URL": {
+      "description": "Paste your mongo db url",
+      "value": "0"
+    },
+    "DATABASE_NAME":{
+      "description": "Enter your DATABASE_NAME ",
+      "value": "sahilnew"
+    },
+    "API_HASH":{
+      "description": "your api hash, take it from my.telegram.org",
+      "value": "0"
+    },
+    "CHANNEL_ID":{
+      "description": "make a channel (database channel), then make the bot as admin in channel, and it's id",
+      "value": "0"
+    },
+    "FORCE_CHANNEL":{
+      "description": "id of the first channel, if you want enable force sub feature else put 0",
+      "value": "0"
+     },
+    "FORCE_CHANNEL2":{
+      "description": "id of the second channel, if you want enable force sub feature else put 0",
+      "value": "0"  
+      },
+    "START_MSG": {
+      "description": "Optional: start message of bot, use HTML parsemode format",
+      "value": "<b>ʜɪ ᴛʜᴇʀᴇ... {first}! 💥\n\nɪ ᴀᴍ ᴀ ꜰɪʟᴇ ꜱᴛᴏʀᴇ ʙᴏᴛ...!\nɪ ᴄᴀɴ ᴘʀᴏᴠɪᴅᴇ ᴘʀɪᴠᴀᴛᴇ ꜰɪʟᴇꜱ ᴛʜʀᴏᴜɢʜ ᴀ ꜱᴘᴇᴄɪꜰɪᴄ ʟɪɴᴋ....!\nᴘᴏᴡᴇʀᴇᴅ ʙʏ - @Anime_X_Hunters</b>"
+    },
+    "FORCE_SUB_MESSAGE": {
+      "description": "Optional: Force Sub message of bot, use HTML parsemode format",
+      "value": "ʜᴇʟʟᴏ {first}!⚡\n\n🫧ᴘʟᴇᴀꜱᴇ ᴊᴏɪɴ ʙᴏᴛʜ ᴏꜰ ᴏᴜʀ ᴀɴɪᴍᴇ ᴄʜᴀɴɴᴇʟꜱ ᴀɴᴅ ᴛʀʏ ᴀɢᴀɪɴ...!"
+    },
+    "PROTECT_CONTENT": {
+      "description": "True means no forward else False",
+      "value": "False",
+      "required": false
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  }
+}
+
