@@ -4,7 +4,7 @@
 
 import pymongo
 import asyncio
-from config import DB_URI, DB_NAME, FORCE_CHANNEL, FORCE_CHANNEL2
+from config import DB_URI, DB_NAME, FORCE_CHANNEL, FORCE_CHANNEL2, FORCE_CHANNEL3, FORCE_CHANNEL4
 
 # Connect to MongoDB and select database
 dbclient = pymongo.MongoClient(DB_URI)
@@ -15,6 +15,8 @@ user_data = database['users']
 admin_data = database['admins']
 channel_data = database['channels']
 channel_data2 = database['channels2']
+channel_data3 = database['channels3']
+channel_data4 = database['channels4']
 
 # Function to check if a user exists
 async def present_user(user_id: int):
@@ -96,6 +98,36 @@ async def add_2(channel1: int):
     try:
         await channel_data2.update_one({}, {'$set': {'force_sub_channel_2': channel1}}, upsert=True)
         print(f"Force subscribe channel 2 set successfully: {channel1}")
+    except Exception as e:
+        print(f"Failed to set force subscribe channel 1: {e}")
+
+async def present_channel3():
+    try:
+        config = channel_data3.find_one({})
+        return config.get('force_sub_channel_3', FORCE_CHANNEL3)
+    except Exception as e:
+        print(f"Failed to get force subscribe channels: {e}")
+        return FORCE_CHANNEL3
+
+async def add_3(channel1: int):
+    try:
+        await channel_data3.update_one({}, {'$set': {'force_sub_channel_2': channel1}}, upsert=True)
+        print(f"Force subscribe channel 2 set successfully: {channel1}")
+    except Exception as e:
+        print(f"Failed to set force subscribe channel 1: {e}")
+
+async def present_channel4():
+    try:
+        config = channel_data4.find_one({})
+        return config.get('force_sub_channel_4', FORCE_CHANNEL4)
+    except Exception as e:
+        print(f"Failed to get force subscribe channels: {e}")
+        return FORCE_CHANNEL4
+
+async def add_4(channel1: int):
+    try:
+        await channel_data4.update_one({}, {'$set': {'force_sub_channel_4': channel1}}, upsert=True)
+        print(f"Force subscribe channel 4 set successfully: {channel1}")
     except Exception as e:
         print(f"Failed to set force subscribe channel 1: {e}")
         
