@@ -122,15 +122,18 @@ REPLY_ERROR = "<code>Use this command as a reply to any telegram message without
 @Bot.on_message(filters.command('start') & filters.private)
 async def not_joined(client: Client, message: Message):
     buttons = [
-        [
-            InlineKeyboardButton(text="ᴄʜᴀɴɴᴇʟ 1", url=client.invitelink1),
-            InlineKeyboardButton(text="ᴄʜᴀɴɴᴇʟ 2", url=client.invitelink2)
-        ],
-        [
-            InlineKeyboardButton(text="ᴄʜᴀɴɴᴇʟ 3", url=client.invitelink3),
-            InlineKeyboardButton(text="ᴄʜᴀɴɴᴇʟ 4", url=client.invitelink4)
-        ]
+        
     ]
+    if client.invitelink1:
+        buttons.append([InlineKeyboardButton("Channel 1", url=client.invitelink1)])
+    if client.invitelink2:
+        buttons.append([InlineKeyboardButton("Channel 2", url=client.invitelink2)])
+    if client.invitelink3:
+        buttons.append([InlineKeyboardButton("Channel 3", url=client.invitelink3)])
+    if client.invitelink4:
+        buttons.append([InlineKeyboardButton("Channel 4", url=client.invitelink4)])
+    
+    
     try:
         buttons.append(
             [
