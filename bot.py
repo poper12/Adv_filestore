@@ -4,7 +4,7 @@ import pyromod.listen
 from pyrogram import Client
 from pyrogram.enums import ParseMode
 from datetime import datetime
-from database.database import present_channel, present_channel2
+from database.database import present_channel, present_channel2, present_channel3, present_chanmel4
 import pyrogram.utils
 import sys
 from config import API_HASH, APP_ID, LOGGER, TG_BOT_TOKEN, TG_BOT_WORKERS, CHANNEL_ID, PORT
@@ -32,6 +32,8 @@ class Bot(Client):
         # Handle Force Sub Channels
         self.FORCESUB_CHANNEL = await present_channel()
         self.FORCESUB_CHANNEL2 = await present_channel2()
+        self.FORCESUB_CHANNEL3 = await present_channel3()
+        self.FORCESUB_CHANNEL4 = await present_channel4()
 
         if self.FORCESUB_CHANNEL:
             try:
@@ -59,6 +61,30 @@ class Bot(Client):
                 self.LOGGER(__name__).warning(f"Please double-check the channel ID and ensure the bot is an admin in the channel with 'Invite Users via Link' permission. Current Channel ID: {self.FORCESUB_CHANNEL2}")
                 sys.exit()
 
+        if self.FORCESUB_CHANNEL3:
+            try:
+                link = (await self.get_chat(self.FORCESUB_CHANNEL3)).invite_link
+                if not link:
+                    await self.export_chat_invite_link(self.FORCESUB_CHANNEL3)
+                    link = (await self.get_chat(self.FORCESUB_CHANNEL3)).invite_link
+                self.invitelink3 = link
+            except Exception as a:
+                self.LOGGER(__name__).warning(a)
+                self.LOGGER(__name__).warning("Bot can't export invite link from Force Sub Channel 3!")
+                self.LOGGER(__name__).warning(f"Please double-check the channel ID and ensure the bot is an admin in the channel with 'Invite Users via Link' permission. Current Channel ID: {self.FORCESUB_CHANNEL3}")
+                sys.exit()
+        if self.FORCESUB_CHANNEL4:
+            try:
+                link = (await self.get_chat(self.FORCESUB_CHANNEL4)).invite_link
+                if not link:
+                    await self.export_chat_invite_link(self.FORCESUB_CHANNEL4)
+                    link = (await self.get_chat(self.FORCESUB_CHANNEL4)).invite_link
+                self.invitelink4 = link
+            except Exception as a:
+                self.LOGGER(__name__).warning(a)
+                self.LOGGER(__name__).warning("Bot can't export invite link from Force Sub Channel 4!")
+                self.LOGGER(__name__).warning(f"Please double-check the channel ID and ensure the bot is an admin in the channel with 'Invite Users via Link' permission. Current Channel ID: {self.FORCESUB_CHANNEL4}")
+                sys.exit()
         # Test DB Channel
         try:
             db_channel = await self.get_chat(CHANNEL_ID)
@@ -71,7 +97,7 @@ class Bot(Client):
             sys.exit()
 
         self.set_parse_mode(ParseMode.HTML)
-        self.LOGGER(__name__).info(f"Bot Running..!\n\nCreated by https://t.me/Animes_X_Hunters")
+        self.LOGGER(__name__).info(f"Bot Running..!\n\nCreated by https://t.me/VOATcb or https://t.me/YugenNetwork")
         self.username = usr_bot_me.username
 
         # Web server setup
@@ -82,4 +108,4 @@ class Bot(Client):
 
     async def stop(self, *args):
         await super().stop()
-        self.LOGGER(__name__).info("Bot stopped.")
+        self.LOGGER(__name__).info("Bot stopped.\nEdited by @Yugen_Bots (/t.me/)")
