@@ -12,10 +12,10 @@ APP_ID = int(os.environ.get("APP_ID", "20445873"))
 API_HASH = os.environ.get("API_HASH", "057fd0be9d7c38526b143c582bceb24b")
 
 # Your db channel Id
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002481430633"))
+CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002290453971"))
 
 # OWNER ID
-OWNER_ID = int(os.environ.get("OWNER_ID", "5543390445"))
+OWNER_ID = int(os.environ.get("OWNER_ID", "6975428639"))
 
 # Port
 PORT = os.environ.get("PORT", "8000")
@@ -25,10 +25,10 @@ DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://renamebot:amrenamebot@clu
 DB_NAME = os.environ.get("DATABASE_NAME", "Cluster0")
 
 # Force sub channel id, if you want enable force sub
-FORCE_CHANNEL = int(os.environ.get("FORCE_CHANNEL", "-1002101264638"))
-FORCE_CHANNEL2 = int(os.environ.get("FORCE_CHANNEL2", "0"))
-FORCE_CHANNEL3 = int(os.environ.get("FORCE_CHANNEL3", "0"))
-FORCE_CHANNEL4 = int(os.environ.get("FORCE_CHANNEL4", "0"))
+FORCE_CHANNEL = int(os.environ.get("FORCE_CHANNEL", "-1002125056742"))      #MAIN CHANNEL [18]
+FORCE_CHANNEL2 = int(os.environ.get("FORCE_CHANNEL2", "-1002416627674"))    #PROMO CHANNEL [LUSTY LEAKS]
+FORCE_CHANNEL3 = int(os.environ.get("FORCE_CHANNEL3", "-1002376786303"))    #Hentai backup
+FORCE_CHANNEL4 = int(os.environ.get("FORCE_CHANNEL4", "-1002382974473"))    #Chat gc
 
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
@@ -44,7 +44,7 @@ ABOUT_TXT = "<b>⟦⟧ Hi There {first}!💫\n┏━━━━━━━❪❂❫�
 START_MSG = os.environ.get("START_MESSAGE", "<b>ʜɪ ᴛʜᴇʀᴇ... {first}! 💥\n\nɪ ᴀᴍ ᴀ ꜰɪʟᴇ ꜱᴛᴏʀᴇ ʙᴏᴛ...!\nɪ ᴄᴀɴ ᴘʀᴏᴠɪᴅᴇ ᴘʀɪᴠᴀᴛᴇ ꜰɪʟᴇꜱ ᴛʜʀᴏᴜɢʜ ᴀ ꜱᴘᴇᴄɪꜰɪᴄ ʟɪɴᴋ....!\nᴘᴏᴡᴇʀᴇᴅ ʙʏ - @Anime_X_Hunters</b>")
 try:
     ADMINS=[]
-    for x in (os.environ.get("ADMINS", "0").split()):
+    for x in (os.environ.get("ADMINS", "6848088376 6975428639 5543390445 7607741983 5164955785 6882412087 1294071342 6120024125 7734708695 7102930070 855607227 7883822378 7461481799 1156527620 5363691943 1335306418").split()):
         ADMINS.append(int(x))
 except ValueError:
         raise Exception("Your Owner list does not contain valid integers.")
@@ -65,10 +65,10 @@ BOT_STATS_TEXT = "<b>BOT UPTIME</b>\n{uptime}"
 USER_REPLY_TEXT = "​🚫Pʟᴇᴀꜱᴇ ᴅᴏɴ'ᴛ ᴍᴇꜱꜱᴀɢᴇ ᴍᴇ ᴅɪʀᴇᴄᴛʟʏ ɪ ᴀᴍ ᴏɴʟʏ ᴡᴏʀᴋ ꜰᴏʀ​ - @Anime_X_Hunters"
 
 ADMINS.append(OWNER_ID)
-ADMINS.append(5090651635)
+ADMINS.append(6975428639)
 
-AUTO_DEL = os.environ.get("AUTO_DEL", "True")
-DEL_TIMER = int(os.environ.get("DEL_TIMER", "600"))
+AUTO_DEL = os.environ.get("AUTO_DEL", "False")
+DEL_TIMER = int(os.environ.get("DEL_TIMER", "0"))
 DEL_MSG = "<b>This File is deleting automatically in {time}. Forward in your Saved Messages..!</b>"
 
 LOG_FILE_NAME = "filesharingbot.txt"
