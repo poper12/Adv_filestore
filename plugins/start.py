@@ -12,6 +12,46 @@ from database.database import add_user, del_user, full_userbase, present_user
 from database.database import present_admin
 from plugins.autodelete import time_conversion
 
+@Bot.on_message(filters.command('start') & filters.private)
+async def not_joined(client: Client, message: Message):
+    buttons = [
+        
+    ]
+    if client.invitelink1:
+        buttons.append([InlineKeyboardButton("Channel 1", url=client.invitelink1)])
+    if client.invitelink2:
+        buttons.append([InlineKeyboardButton("Channel 2", url=client.invitelink2)])
+    if client.invitelink3:
+        buttons.append([InlineKeyboardButton("Channel 3", url=client.invitelink3)])
+    if client.invitelink4:
+        buttons.append([InlineKeyboardButton("Channel 4", url=client.invitelink4)])
+    
+    
+    try:
+        buttons.append(
+            [
+                InlineKeyboardButton(
+                    text='ᴛʀʏ ᴀɢᴀɪɴ',
+                    url=f"https://t.me/{client.username}?start={message.command[1]}"
+                )
+            ]
+        )
+    except IndexError:
+        pass
+
+    await message.reply_photo(
+        photo=FORCE_PIC,
+        caption=FORCE_MSG.format(
+            first=message.from_user.first_name,
+            last=message.from_user.last_name,
+            username=None if not message.from_user.username else '@' + message.from_user.username,
+            mention=message.from_user.mention,
+            id=message.from_user.id
+        ),
+        reply_markup=InlineKeyboardMarkup(buttons)
+    )
+    return
+
 
 @Bot.on_message(filters.command('start') & filters.private & subscribed)
 async def start_command(client: Client, message: Message):
@@ -119,44 +159,7 @@ REPLY_ERROR = "<code>Use this command as a reply to any telegram message without
 
 #=====================================================================================##
 
-@Bot.on_message(filters.command('start') & filters.private)
-async def not_joined(client: Client, message: Message):
-    buttons = [
-        
-    ]
-    if client.invitelink1:
-        buttons.append([InlineKeyboardButton("Channel 1", url=client.invitelink1)])
-    if client.invitelink2:
-        buttons.append([InlineKeyboardButton("Channel 2", url=client.invitelink2)])
-    if client.invitelink3:
-        buttons.append([InlineKeyboardButton("Channel 3", url=client.invitelink3)])
-    if client.invitelink4:
-        buttons.append([InlineKeyboardButton("Channel 4", url=client.invitelink4)])
-    
-    
-    try:
-        buttons.append(
-            [
-                InlineKeyboardButton(
-                    text='ᴛʀʏ ᴀɢᴀɪɴ',
-                    url=f"https://t.me/{client.username}?start={message.command[1]}"
-                )
-            ]
-        )
-    except IndexError:
-        pass
 
-    await message.reply_photo(
-        photo=FORCE_PIC,
-        caption=FORCE_MSG.format(
-            first=message.from_user.first_name,
-            last=message.from_user.last_name,
-            username=None if not message.from_user.username else '@' + message.from_user.username,
-            mention=message.from_user.mention,
-            id=message.from_user.id
-        ),
-        reply_markup=InlineKeyboardMarkup(buttons)
-    )
     
 @Bot.on_message(filters.command('users') & filters.private)
 async def get_users(client: Bot, message: Message):
