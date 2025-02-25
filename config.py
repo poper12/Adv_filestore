@@ -3,29 +3,29 @@ import logging
 from logging.handlers import RotatingFileHandler
 
 # Bot token @Botfather
-TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "0")
+TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "8168108654:AAERKQPbr7OKbLREFZw1MaxCqQRIBCn0V54")
 
 # Your API ID from my.telegram.org
-APP_ID = int(os.environ.get("APP_ID", "0"))
+APP_ID = int(os.environ.get("APP_ID", "20445873"))
 
 # Your API Hash from my.telegram.org
-API_HASH = os.environ.get("API_HASH", "0")
+API_HASH = os.environ.get("API_HASH", "057fd0be9d7c38526b143c582bceb24b")
 
 # Your db channel Id
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "0"))
+CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002290453971"))
 
 # OWNER ID
-OWNER_ID = int(os.environ.get("OWNER_ID", "0"))
+OWNER_ID = int(os.environ.get("OWNER_ID", "6848088376"))
 
 # Port
-PORT = os.environ.get("PORT", "8050")
+PORT = os.environ.get("PORT", "8000")
 
 # Database
-DB_URI = os.environ.get("DATABASE_URL", "0")
-DB_NAME = os.environ.get("DATABASE_NAME", "Mrdaxx123")
+DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://renamebot:amrenamebot@cluster0.5ornz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+DB_NAME = os.environ.get("DATABASE_NAME", "Cluster0")
 
 # Force sub channel id, if you want enable force sub
-FORCE_CHANNEL = int(os.environ.get("FORCE_CHANNEL", "0"))
+FORCE_CHANNEL = int(os.environ.get("FORCE_CHANNEL", "-1002125056742"))
 FORCE_CHANNEL2 = int(os.environ.get("FORCE_CHANNEL2", "0"))
 FORCE_CHANNEL3 = int(os.environ.get("FORCE_CHANNEL3", "0"))
 FORCE_CHANNEL4 = int(os.environ.get("FORCE_CHANNEL4", "0"))
@@ -56,7 +56,7 @@ FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "ʜᴇʟʟᴏ {first}!⚡\n\n�
 CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", None)
 
 # set True if you want to prevent users from forwarding files from bot
-PROTECT_CONTENT = True if os.environ.get('PROTECT_CONTENT', "False") == "True" else False
+PROTECT_CONTENT = True if os.environ.get('PROTECT_CONTENT', "True") == "True" else False
 
 # Set true if you want Disable your Channel Posts Share button
 DISABLE_CHANNEL_BUTTON = os.environ.get("DISABLE_CHANNEL_BUTTON", None) == 'True'
