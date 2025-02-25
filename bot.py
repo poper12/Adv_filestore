@@ -11,6 +11,10 @@ from config import API_HASH, APP_ID, LOGGER, TG_BOT_TOKEN, TG_BOT_WORKERS, CHANN
 pyrogram.utils.MIN_CHANNEL_ID = -1009147483647
 
 class Bot(Client):
+    invitelink1 = ""
+    invitelink2 = ""
+    invitelink3 = ""
+    invitelink4 = ""
     def __init__(self):
         super().__init__(
             name="Bot",
